@@ -1,0 +1,863 @@
+/* === RESET SIMPLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #000; /* noir pur */
+  background-color: #fff9f9;
+  line-height: 1.6;
+}
+
+/* === GLOBAL CONTAINER === */
+.container {
+  width: 90%;           /* plus large que précédemment */
+  max-width: 1400px;    /* max-width augmenté */
+  margin: 0 auto; /* Centrage horizontal, sans marge latérale */
+  padding: 0;     /* Important pour ne pas réduire la largeur interne */
+  box-sizing: border-box;
+  display: wrap; /* ou au moins flex-wrap: wrap si tu veux flex */
+
+
+}
+/* === HEADER === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff9f9; /* fond très clair rose */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.header-content {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* NAVIGATION DESKTOP */
+.site-nav {
+  position: static;
+  display: flex;
+  gap: 30px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+  width: auto;
+  transition: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 10px 0;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #ce86c0;
+}
+
+/* BOUTON HAMBURGER - caché sur desktop */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #000;
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+
+  /* Affiche bouton hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Menu caché sur la droite */
+  .site-nav {
+    position: fixed;
+    top: 60px;  /* sous le header */
+    right: 0;
+    background: white;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Affiche le menu lorsqu'il a la classe active */
+  .site-nav.active {
+    transform: translateX(0);
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px;
+  }
+}
+
+
+
+/* === ACCUEIL === */
+
+.nom-pres {
+  color: #000;
+  font-size: 2em;
+}
+
+
+.texte-deux-colonnes {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px 30px;
+  flex-wrap: wrap; /* permet d’éviter débordements */
+}
+
+/* Colonnes prennent toute la largeur sur mobile */
+@media (max-width: 768px) {
+  .texte-deux-colonnes {
+    flex-direction: column;
+    gap: 20px; /* réduire l’espace vertical sur mobile */
+    padding: 20px 15px;
+  }
+  
+  .colonne {
+    flex: unset; /* enlever flex-grow */
+    width: 100%;  /* occuper toute la largeur */
+  }
+}
+
+
+.gauche {
+  text-align: left;
+}
+
+.droite {
+  text-align: left;
+}
+
+blockquote {
+  border-left: 8px solid #ce86c0; /* trait épais à gauche */
+  padding-left: 20px; 
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #000;
+  margin: 30px auto;
+  max-width: 1200px;
+  border-radius: 8px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.photo-texte-bloc-accueil {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centre les enfants horizontalement */
+  gap: 30px;
+  margin: 50px 0;
+  align-items: center;
+  text-align: left;
+}
+
+.photo-texte-bloc-accueil img {
+  max-width: 100%;
+  width: 400px;
+  aspect-ratio: 1800 / 1355;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+.photo-texte-bloc-accueil .texte {
+  flex: 1;
+  min-width: 250px;
+}
+
+.photo-texte-bloc-accueil .texte h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.photo-texte-bloc-accueil .texte p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+
+.motif-bloc{
+  padding: 40px 20px;
+}
+
+.motif-bloc img {
+  max-width: 100%; /* l’image s’adapte à la largeur du conteneur */
+  display: block;
+  margin: 20px auto; /* espace + centrage horizontal */
+  width: 100%;          /* image s’adapte au conteneur */
+  max-width: 600px;     /* limite la taille maximale */
+  height: auto;         /* conserve les proportions */
+  border-radius: 300px;
+
+}
+
+
+/* === MA PRATIQUE === */
+
+/* Boutons primaires */
+.btn {
+  display: inline-block;
+  background-color: #f6eac9;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-left: 10vw; /* 35% de la largeur de la fenêtre */
+
+}
+
+.btn:hover {
+  background-color: #fde39c;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-4px); /* décale le bouton vers le haut */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-info {
+  display: inline-block;
+  background-color: #f6eac9;
+  color: #000;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  position: relative; /* pour que z-index fonctionne */
+  z-index: 10;
+
+}
+
+.btn-info:hover {
+  background-color: #fde39c;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-4px); /* décale le bouton vers le haut */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Sections */
+main section {
+  margin-bottom: 60px;
+}
+
+main img {
+  max-width: 100%;
+  display: block;
+  margin: 20px 0;
+}
+.photo-texte-bloc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+  flex-wrap: wrap; /* responsive */
+}
+
+.photo-texte-bloc img {
+  max-width: 100%;
+  width: 400px;
+  aspect-ratio: 1800 / 1355;
+  height: auto;
+  border-radius: 80px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-texte-bloc .texte {
+  flex: 1;
+  min-width: 250px;
+}
+
+.photo-texte-bloc .texte h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.photo-texte-bloc .texte p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.fond-clair {
+  background-color: #f1d3e0bd;
+  padding: 30px 30px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+.fond-tres-clair {
+  background-color: #f6eeee;
+  padding: 30px 30px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .photo-texte-bloc {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .photo-texte-bloc img {
+    margin-bottom: 20px;
+  }
+
+  .photo-texte-bloc .texte {
+    text-align: left;
+  }
+}
+
+
+.approche p,
+.a-distance p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.liste-decalee {
+  margin-left: 40px; /* ou padding-left: 20px; */
+}
+.titre-formation {
+  color: #000;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.liste-formation {
+  margin-bottom: 30px;
+}
+
+hr {
+  border: none;
+  background-color: #000;
+  margin: 40px auto;
+  width: 30%; 
+  height: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+/* === A DISTANCE : BLOCS EN GRILLE === */
+.centered {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.souligne {
+  text-decoration: underline;
+}
+
+.a-distance-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.a-distance-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  color: #000; /* noir pur */
+}
+
+.intro-text {
+  background-color: #f1d3e0bd;
+  padding: 20px 30px;
+  border-radius: 8px;
+  color: #000; /* noir pur */
+  font-size: 1.1rem;
+  margin: 0 auto 20x auto;
+  text-align: left;
+}
+
+
+.grid-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: stretch;
+}
+
+.info-block {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%; /* IMPORTANT : prendre toute la hauteur de la grille */
+  box-sizing: border-box;
+  min-height: 250px;
+}
+
+.info-content {
+  background-color: rgba(255, 255, 255, 0.8); /* blanc transparent */
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 10px;
+  width: 90%; /* ou ce que tu veux */
+  height: 80%; /* IMPORTANT : prend toute la hauteur du parent */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* pour centrer verticalement le texte */
+}
+
+
+.info-block::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.2); /* noir semi-transparent */
+  z-index: 1;
+}
+
+
+
+
+.info-content h3 {
+  margin-bottom: 10px;
+  color: #000; /* noir pur */
+  font-size: 1.2rem;
+}
+
+.info-content p {
+  color: #000; /* noir pur */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+.side-block {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px 0; /* padding vertical seulement */
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.text-content {
+  text-align: left;
+  flex: 1;
+  color: #000;
+}
+
+.text-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 50%; /* plutôt que 100% */
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+
+  .side-block {
+    flex: 1 1 100%;
+    flex-direction: column;
+    padding: 20px 0;
+    align-items: flex-start;
+  }
+  .info-content {
+    width: 95%;      /* presque toute la largeur */
+    height: auto;    /* hauteur s’adapte au contenu */
+    margin: 10px auto; /* centrer horizontalement avec marge verticale */
+  }
+  .image-content {
+    margin-top: 20px;
+  }
+  .text-content {
+    padding-left: 15px;
+    width: 100%;
+    text-align: left; /* renforce l’alignement à gauche */
+  }
+
+}
+
+.deux-modes {
+  display: flex;
+  text-align: left;
+  align-items: center; 
+  background-color: #f1d3e0bd; 
+  padding: 15px;              /* un peu d’espace à l’intérieur */
+  border-radius: 8px;         /* coins arrondis, optionnel */
+}
+
+/* === PRENDRE RDV === */
+
+h1{
+  margin-bottom: 1em; /* espace sous le titre */
+}
+
+
+h2, h3 {
+  margin-top: 0.3em;
+  margin-bottom: 1.2em; /* espace sous le titre */
+}
+
+p {
+  margin-top: 0;
+}
+
+.info-rdv h3{
+margin-bottom: 10px;
+}
+
+.contact-section {
+  padding: 60px 30px;
+  background-color: #fff9f9;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.contact-section p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: #000;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #dba8b3;
+  box-shadow: 0 0 5px rgba(219, 168, 179, 0.5);
+}
+
+.contact-form button {
+  background-color: #f6eac9;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #fde39c;
+}
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+}
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #dba8b3;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1.2s linear infinite;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* pour que ça passe en colonne sur petits écrans */
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive : empile sur petits écrans */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.rose {
+  color :#ab3093 
+}
+/* === FOOTER === */
+.site-footer {
+  background-color: #fff9f9;
+  padding: 30px 0 30px 0; /* ↑ ↑ ↑ padding top augmenté à 50px */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05); /* ombre en haut */
+}
+
+.footer-container {
+  background-color: #fff9f9; /* même couleur que le logo */
+  width: 100%;
+  max-width: none;  /* plus de limite */
+  margin: 0;        /* pas de centrage */
+  padding: 0 70px;  /* éventuellement un peu de marge intérieure */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.footer-left {
+  flex: 0 0 35%; /* ne grandit pas, ne rétrécit pas, largeur fixe à 35% */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.footer-contact {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.footer-logo h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.footer-contact h4 {
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.footer-contact p {
+  margin-bottom: 12px;
+}
+
+.footer-contact a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-about {
+  flex: 0 0 65%; /* largeur fixe à 65% */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-top: 30px;
+}
+.footer-about p {
+  margin-bottom: 1.2em;
+
+}
+.footer-about h4 {
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+/* Responsive : empilement sur petits écrans */
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-left, .footer-about {
+    flex: 1 1 100%;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+}
+
+.footer-copyright {
+  background-color: #fff9f9; /* même couleur que le logo */
+  text-align: center;
+  font-size: 0.85rem;
+  color: #000;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 30px;
+  padding-bottom: 30px;  
+
+}
+
+.footer-copyright a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-copyright a:hover {
+  color: #e91e63; /* un joli rose */
+  text-decoration: underline; /* si tu veux garder le soulignement au hover */
+}
+
+/* === RESPONSIVE ADAPTATIONS === */
+@media (max-width: 768px) {
+  .site-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .grid-blocks {
+    grid-template-columns: 1fr; /* une colonne sur mobile */
+  }
+}
+/* Responsive */
+@media (max-width: 700px) {
+  .side-block,
+  .side-block.reverse {
+        flex: 1 1 100%;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .image-content {
+    margin-top: 20px;
+  }
+
+  .image-content img {
+    width: 20%;
+    height: auto;
+  }
+}

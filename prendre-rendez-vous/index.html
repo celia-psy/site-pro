@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prendre rendez-vous – Célia Tondu Psychologue</title>
+  <meta name="description" content="Psychologue clinicienne, spécialisée dans la prise en charge des addictions et des TCA, je propose des consultations pour adultes." />
+  <meta name="theme-color" content="#f9c5d1">
+  <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="icon" href="https://celiatondu-psychologue.com/images/favicon.png" type="image/png">
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Célia Tondu Psychologue",
+    "url": "https://celiatondu-psychologue.com",
+    "logo": "https://celiatondu-psychologue.com/images/favicon.png"
+  }
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content container">
+    <a href="/" class="logo">
+      <img src="/images/logo-celia.webp" width="150" height="100" alt="Célia Tondu Psychologue" />
+    </a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu">&#9776;</button>
+
+    <nav class="site-nav" >
+      <ul>
+        <li><a href="/ma-pratique/">Ma pratique</a></li>
+        <li><a href="/a-distance/">À distance</a></li>
+        <li><a href="/prendre-rendez-vous/">Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="container">
+
+  <div class="fond-clair info-rdv">
+    <h1>Prendre rendez-vous</h1>
+    <h2>Informations pratiques</h2>
+    <h3>Tarifs</h3>
+    <ul class="liste-decalee">
+      <li>Consultation Adultes : 60€</li>
+      <li>Consultation Étudiants (sur présentation de justificatifs) : 50€</li>
+      <li>Une séance dure environ 50 minutes.</li>
+    </ul>
+
+    <h3>Horaires de consultations</h3>
+    <ul class="liste-decalee">
+      <li>Mardi : 10h - 17h</li>
+      <li>Mercredi : 10h - 17h</li>
+      <li>Jeudi : 09h - 17h</li>
+    </ul>
+  </div>
+
+  <!-- PRISE DE PATIENTS EN ATTENTE -->
+   <div class="fond-tres-clair info-rdv">
+    <h2 class="rose">⚠️ Nouveaux patients</h2>
+    <p>Actuellement, je ne suis plus en mesure d'accepter de nouveaux patients en suivi.</p>
+    <p>Si vous souhaitez être contacté lorsque de nouveaux créneaux se libèrent, je vous invite à remplir le formulaire ci-dessous. </p> 
+    <p>Je reviendrai vers vous dès qu'un créneau sera disponible.</p>
+    <p>Merci et à bientôt.</p>
+  </div>
+
+<!-- PRISE DE PATIENTS OK
+  <div class="fond-tres-clair info-rdv">
+    <h2 class="rose">Nouveaux patients</h2>
+    <p>Pour toute première prise de contact, je vous invite à remplir le formulaire ci-dessous. Cela me permettra de mieux comprendre votre demande et vos disponibilités.</p>
+    <p>Je vous recontacterai dans les plus brefs délais afin de convenir ensemble d’un premier rendez-vous.</p> 
+    <p>Merci et à bientôt.</p>
+  </div>
+-->
+
+  <section class="contact-section">
+  <form action="https://formspree.io/f/mdkzzknp" method="POST" class="contact-form">
+    <!-- Groupe Nom + Prénom -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="forname">Prénom</label>
+        <input type="text" id="forname" name="forname" required>
+      </div>
+    </div>
+
+    <!-- Groupe Email + Téléphone -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span>Êtes-vous étudiant(e) ?</span>
+
+      <input type="radio" id="etudiant-oui" name="etudiant" value="oui">
+      <label for="etudiant-oui">Oui</label>
+
+      <input type="radio" id="etudiant-non" name="etudiant" value="non" checked>
+      <label for="etudiant-non">Non</label>
+    </div>
+
+    <label for="message">Votre demande</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <label for="horaire">Horaires souhaitées</label>
+    <textarea id="horaire" name="horaire" rows="3" required></textarea>
+
+    <!-- Honeypot -->
+    <input type="text" name="_gotcha" style="display: none;">
+
+  <button type="submit" id="submitBtn">
+    <span class="btn-text">Envoyer</span>
+    <span class="spinner" style="display: none;"></span>
+  </button>  </form>
+</section>
+
+
+  <div class="fond-clair info-rdv">
+    <h2 class="rose">Patients déjà suivis</h2>
+    <p>Si vous êtes déjà suivi(e) et que nous n’avons pas encore convenu ensemble d’un prochain rendez-vous, je vous invite à me contacter directement (par mail ou téléphone) afin que nous puissions fixer un créneau.</p>
+    <p>La prise de rendez-vous ne se fait désormais plus via le site, mais uniquement en échangeant ensemble, pour mieux adapter les séances à vos besoins et disponibilités.</p> 
+    <p>Merci pour votre compréhension.</p>
+  </div>
+
+
+  <div class="fond-tres-clair info-rdv">
+    <h2>Remboursement des consultations</h2>
+    <p>Je souhaite vous informer que je ne fais pas partie du dispositif Mon soutien Psy, ce qui signifie que mes consultations ne sont pas remboursées par la sécurité sociale. Cependant, certaines mutuelles proposent le remboursement de quelques séances. Dans ce cas, je pourrai vous fournir une facture par mail après chaque rendez-vous.</p>
+    <h2>Modifications et annulations</h2>
+    <p>Vous avez jusqu’à 48 heures avant le rendez-vous pour l’annuler ou le déplacer en me contactant par mail : contact@celiatondu-psychologue.com. En cas de retard, la séance n’est pas prolongée et le temps de retard sera déduit de la durée initiale.</p>
+</p>
+  </div>
+</main>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+    <div class="footer-logo">
+      <a href="/">
+      <img src="/images/logo-celia.webp" alt="Logo Célia Tondu Psychologue" width="60" height="60" />
+      </a>
+    </div>
+      <div class="footer-contact">
+        <h4>Informations de contact</h4>
+        <p><strong>E-mail :</strong> <a href="mailto:contact@celiatondu-psychologue.com">contact@celiatondu-psychologue.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+33658554742">06 58 55 47 42</a></p>
+      </div>
+    </div>
+
+    <div class="footer-about">
+      <h4>À propos</h4>
+      <p>Psychologue clinicienne et psychothérapeute, je propose des psychothérapies individuelles d’orientation intégrative.</p>
+      <p>Le titre de Psychologue est protégé par la loi. Je suis enregistrée en tant que psychologue à l'ARS. Le psychologue est soumis au code de déontologie des psychologues.</p>
+      <p><strong>Numéro RPPS :</strong> 10110158036</p>
+      <p><strong>SIREN :</strong> 930056874</p>
+    </div>
+  </div>
+<div class="footer-copyright">
+  Copyright © 2025 Célia Tondu – Tous droits réservés - 
+  <a href="/mentions-legales/">Mentions légales</a> - Fait avec ❤️
+</div>
+
+</footer>
+<script>
+  const form = document.querySelector('.contact-form');
+  const submitBtn = document.getElementById('submitBtn');
+  const spinner = submitBtn.querySelector('.spinner');
+  const btnText = submitBtn.querySelector('.btn-text');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Empêche la soumission normale
+
+    // Affiche le spinner et désactive le bouton
+    spinner.style.display = 'inline-block';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        headers: { 'Accept': 'application/json' },
+        body: formData,
+      });
+
+      if (response.ok) {
+        btnText.textContent = "Merci, message envoyé !";
+        form.reset();
+      } else {
+        btnText.textContent = "Erreur lors de l'envoi";
+      }
+    } catch (error) {
+      btnText.textContent = "Erreur réseau";
+    }
+
+    spinner.style.display = 'none';
+    submitBtn.disabled = false;
+
+    // Optionnel : remettre le texte du bouton au bout de 3 secondes
+    setTimeout(() => {
+      btnText.textContent = "Envoyer";
+    }, 10000);
+  });
+</script>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.site-nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
