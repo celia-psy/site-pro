@@ -857,7 +857,8 @@ margin-bottom: 10px;
   }
 
   .image-content img {
-  max-width: 100%;
+  max-width: 150px;
+  width: 100%;  
   height: auto;
   display: block;
   }
